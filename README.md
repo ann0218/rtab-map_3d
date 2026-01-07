@@ -1,5 +1,5 @@
 # rtab-map_3d
-use tutrlebot-waffle. use 3d liadr
+use tutrlebot-waffle. use 3d LiDAR
 
 # install
 https://github.com/introlab/rtabmap_ros
