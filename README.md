@@ -127,15 +127,11 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 T2
 ```
-ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 0.12 --yaw 0 --pitch 0 --roll 0 --frame-id base_link --child-frame-id velodyne_frame --ros-args -p use_sim_time:=true
+ros2 run tf2_ros static_transform_publisher --ros-args -p use_sim_time:=true -- --x 0 --y 0 --z 0.12 --yaw 0 --pitch 0 --roll 0 --frame-id base_link --child-frame-id velodyne_frame
 ```
 T3
 ```
-ros2 launch rtabmap_launch rtabmap.launch.py     rtabmap_viz:=false     use_sim_time:=true     args:="-d --DeleteDbOnStart --Reg/Strategy 1 --Reg/Force3DoF true \
-           --Grid/MaxObstacleHeight 1.0 \
-           --Grid/MinGroundHeight 0.1 \
-           --Grid/RangeMax 10.0 \
-           --Grid/RayTracing true"     visual_odometry:=false     icp_odometry:=false     odom_topic:=/odom     subscribe_depth:=true     subscribe_rgb:=true     subscribe_scan:=false     subscribe_scan_cloud:=true     scan_cloud_topic:=/points_raw     rgb_topic:=/camera/image_raw     depth_topic:=/camera/depth/image_raw     camera_info_topic:=/camera/camera_info     frame_id:=base_footprint     approx_sync:=true     wait_imu_to_init:=false     qos:=2
+ros2 run rtabmap_slam rtabmap     --Grid/3D true     --Grid/RayTracing true     --Grid/MaxObstacleHeight 1.5     --Grid/MinGroundHeight 0.1     --Grid/RangeMax 10.0     --Grid/FromDepth false     --Reg/Strategy 1     --Reg/Force3DoF true     --ros-args     -r scan_cloud:=/points_raw     -r odom:=/odom     -p subscribe_depth:=false     -p subscribe_rgb:=false     -p subscribe_scan:=false     -p subscribe_scan_cloud:=true     -p frame_id:=base_link     -p map_frame_id:=map     -p odom_frame_id:=odom     -p use_sim_time:=true     -p approx_sync:=true     -p queue_size:=50
 ```
 T3
 ```
