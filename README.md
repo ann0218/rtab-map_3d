@@ -133,13 +133,22 @@ T3
 ```
 ros2 run rtabmap_slam rtabmap     --Grid/3D true     --Grid/RayTracing true     --Grid/MaxObstacleHeight 1.5     --Grid/MinGroundHeight 0.1     --Grid/RangeMax 10.0     --Grid/FromDepth false     --Reg/Strategy 1     --Reg/Force3DoF true     --ros-args     -r scan_cloud:=/points_raw     -r odom:=/odom     -p subscribe_depth:=false     -p subscribe_rgb:=false     -p subscribe_scan:=false     -p subscribe_scan_cloud:=true     -p frame_id:=base_link     -p map_frame_id:=map     -p odom_frame_id:=odom     -p use_sim_time:=true     -p approx_sync:=true     -p queue_size:=50
 ```
-T3
+
+T4
+```
+rviz2 rviz rviz  
+#open map topic 
+#open pointcloud2 topic
+```
+T5
 ```
 export TURTLEBOT3_MODEL=waffle
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
 # demo 
 <img width="1210" height="718" alt="螢幕擷取畫面 2026-01-07 162934" src="https://github.com/user-attachments/assets/1abda1d6-9ead-4bd7-a260-8095defbc84d" />
+<img width="1208" height="871" alt="image" src="https://github.com/user-attachments/assets/47c40391-c179-443e-b896-6be23ad3550e" />
+
 
 
 
